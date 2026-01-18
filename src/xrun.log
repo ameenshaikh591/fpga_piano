@@ -1,0 +1,84 @@
+xrun(64): 25.03-s003: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.03-s003: Started on Jan 18, 2026 at 18:58:13 EST
+xrun
+	-sv
+	ps2_receiver_tb.sv
+	ps2_receiver.sv
+Recompiling... reason: file './ps2_receiver_tb.sv' is newer than expected.
+	expected: Sun Jan 18 18:51:22 2026
+	actual:   Sun Jan 18 18:58:08 2026
+file: ps2_receiver_tb.sv
+            key_press(8'h0x15);
+                            |
+xmvlog: *W,INTOVF (ps2_receiver_tb.sv,104|28): bit overflow during conversion from text [2.5(IEEE)] (8 bits).
+        assert(key == 8'h0x15) begin
+                            |
+xmvlog: *W,INTOVF (ps2_receiver_tb.sv,108|28): bit overflow during conversion from text [2.5(IEEE)] (8 bits).
+        key_delete(8'h0x15);
+                         |
+xmvlog: *W,INTOVF (ps2_receiver_tb.sv,113|25): bit overflow during conversion from text [2.5(IEEE)] (8 bits).
+        key_press(8'h0x1D);
+                        |
+xmvlog: *W,INTOVF (ps2_receiver_tb.sv,128|24): bit overflow during conversion from text [2.5(IEEE)] (8 bits).
+        key_press(8'h0x1D);
+                        |
+xmvlog: *W,INTOVF (ps2_receiver_tb.sv,130|24): bit overflow during conversion from text [2.5(IEEE)] (8 bits).
+        key_press(8'h0x15); // Q
+                        |
+xmvlog: *W,INTOVF (ps2_receiver_tb.sv,133|24): bit overflow during conversion from text [2.5(IEEE)] (8 bits).
+        key_delete(8'h0x15);
+                         |
+xmvlog: *W,INTOVF (ps2_receiver_tb.sv,135|25): bit overflow during conversion from text [2.5(IEEE)] (8 bits).
+        key_press(8'h0x2D); // R
+                        |
+xmvlog: *W,INTOVF (ps2_receiver_tb.sv,137|24): bit overflow during conversion from text [2.5(IEEE)] (8 bits).
+        key_delete(8'h0x2D);
+                         |
+xmvlog: *W,INTOVF (ps2_receiver_tb.sv,139|25): bit overflow during conversion from text [2.5(IEEE)] (8 bits).
+        assert(key == 8'h0x1D) begin
+                            |
+xmvlog: *W,INTOVF (ps2_receiver_tb.sv,141|28): bit overflow during conversion from text [2.5(IEEE)] (8 bits).
+        key_delete(8'h0x1D);
+                         |
+xmvlog: *W,INTOVF (ps2_receiver_tb.sv,146|25): bit overflow during conversion from text [2.5(IEEE)] (8 bits).
+        assert(key == 8'h0x00) begin
+                            |
+xmvlog: *W,INTOVF (ps2_receiver_tb.sv,148|28): bit overflow during conversion from text [2.5(IEEE)] (8 bits).
+	module worklib.ps2_receiver_tb:sv
+		errors: 0, warnings: 12
+file: ps2_receiver.sv
+	module worklib.ps2_receiver:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		ps2_receiver_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.ps2_receiver:sv <0x4a28fe61>
+			streams:   9, words:  3258
+		worklib.ps2_receiver_tb:sv <0x6a90238c>
+			streams:  10, words: 12546
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              27      27
+		Scalar wires:            4       -
+		Vectored wires:          2       -
+		Always blocks:           2       2
+		Initial blocks:          2       2
+		Pseudo assignments:      1       -
+		Assertions:              4       4
+		Process Clocks:          1       1
+		Simulation timescale:  1ns
+	Writing initial simulation snapshot: worklib.ps2_receiver_tb:sv
+Loading snapshot worklib.ps2_receiver_tb:sv .................... Done
+xcelium> source /tools/software/cadence/xcelium/latest/tools/xcelium/files/xmsimrc
+xcelium> run
+[SUCCESS]: Test Hold Primary Key successful.
+Simulation complete via $finish(1) at time 116610 US + 0
+./ps2_receiver_tb.sv:162         $finish;
+xcelium> exit
+TOOL:	xrun(64)	25.03-s003: Exiting on Jan 18, 2026 at 18:58:17 EST  (total: 00:00:04)
